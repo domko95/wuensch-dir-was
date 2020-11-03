@@ -10,6 +10,10 @@ const Button = styled.button`
   height: 50px;
   line-height: 1;
   cursor: pointer;
+  ${(props) =>
+    props.pos === 'bottom-right'
+      ? 'position: absolute; bottom: 20px; right: 20px;'
+      : ''}
 `;
 
 export default Button;

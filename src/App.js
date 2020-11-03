@@ -4,6 +4,7 @@ import GlobalStyle from './GlobalStyle';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Topics from './pages/Topics';
+import Add from './pages/Add';
 
 const Nav = styled.ul`
   display: flex;
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/topics">
             <Topics />
+          </Route>
+          <Route path="/add">
+            <Add />
           </Route>
           <Route path="/">
             <Home />

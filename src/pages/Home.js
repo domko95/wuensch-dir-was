@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/Button';
 import WishListItem from '../components/WishListItem';
@@ -7,11 +8,14 @@ export default function Home() {
     text-align: center;
     color: red;
   `;
+
   return (
     <>
       <H2>Home</H2>
       <WishListItem title="Dominique" />
-      <Button>+</Button>
+      <Button pos="bottom-right">
+        <Link to="/add">+</Link>
+      </Button>
     </>
   );
 }
