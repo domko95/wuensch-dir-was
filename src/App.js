@@ -10,10 +10,12 @@ const Nav = styled.ul`
   flex-direction: row;
   justify-content: space-evenly;
   list-style-type: none;
-  background: #092309;
+  background: orange;
   margin: 0;
   padding: 1rem 0;
 `;
+
+const title = 'Dominique';
 
 function App() {
   return (
@@ -30,10 +32,10 @@ function App() {
             <Add />
           </Route>
           <Route path="/:title">
-            <WishList />
+            <WishList title={title} />
           </Route>
           <Route path="/">
-            <Home />
+            <Home title={title} />
           </Route>
         </Switch>
       </Router>

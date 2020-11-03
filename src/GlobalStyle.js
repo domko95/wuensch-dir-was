@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: black;
-    color: limegreen;
+    color: orange;
   }
 
   code {
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: limegreen;
+    color: black;
   }
 `;
 

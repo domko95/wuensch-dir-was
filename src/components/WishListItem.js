@@ -5,7 +5,8 @@ const Container = styled.div`
   margin: 20px 10px;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 10px 20px limegreen;
+  box-shadow: 0 10px 20px orange;
+  color: orange;
 `;
 
 export default function WishListSelector({ title }) {
