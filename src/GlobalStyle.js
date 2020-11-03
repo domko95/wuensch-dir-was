@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
       'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: black;
+    color: limegreen;
   }
 
   code {
@@ -20,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: white;
+    color: limegreen;
   }
 `;
 

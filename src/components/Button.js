@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   border: none;
-  background: lightblue;
+  background: limegreen;
   border-radius: 50%;
   font-size: 3rem;
   color: white;

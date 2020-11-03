@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/Button';
-import WishListItem from '../components/WishListItem';
+import WishListSelector from '../components/WishListSelector';
+
+const H2 = styled.h2`
+  text-align: center;
+  color: limegreen;
+`;
 
 export default function Home() {
-  const H2 = styled.h2`
-    text-align: center;
-    color: red;
-  `;
-
   return (
     <>
       <H2>Home</H2>
-      <WishListItem title="Dominique" />
-      <Button pos="bottom-right">
-        <Link to="/add">+</Link>
-      </Button>
+      <WishListSelector title="Dominique" />
+      <Link to="/add">
+        <Button pos="bottom-right">+</Button>
+      </Link>
     </>
   );
 }
