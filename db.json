@@ -1,6 +1,31 @@
 {
   "lists": [
-    { "id": 1, "title": "Dominique" },
-    { "id": 2, "title": "Hans" }
+    {
+      "id": 1,
+      "title": "Bernd",
+      "wishes": [
+        "hässliche Socken",
+        "grauenvoller Pullover",
+        "ekelhafte Süßigkeiten"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hans",
+      "wishes": [
+        "Billig-Whiskey",
+        "Besuch von der Schwiegermutter",
+        "Versalzene Suppe"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Peter",
+      "wishes": [
+        "brennender Weihnachsbaum",
+        "Zu harte Plätzchen",
+        "Selbstzerstörendes Geschenk"
+      ]
+    }
   ]
 }
