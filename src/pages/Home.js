@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <H2>Welcome to Wishlist</H2>
       {lists?.map((list) => (
-        <Link key={list.id} to={list.title}>
+        <Link key={list.id} to={`/${list.id}`}>
           <WishListItem title={list.title} />
         </Link>
       ))}

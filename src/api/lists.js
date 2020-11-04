@@ -4,8 +4,8 @@ export async function getLists() {
   return lists;
 }
 
-export async function getWishes(name) {
-  const response = await fetch(`http://localhost:5000/lists?title=${name}`);
+export async function getListById(id) {
+  const response = await fetch(`http://localhost:5000/lists/${id}`);
   const list = await response.json();
-  return list[0].wishes;
+  return list;
 }
