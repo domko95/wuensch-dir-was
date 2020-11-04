@@ -38,7 +38,6 @@ function App() {
             <Home title={title} />
           </Route>
         </Switch>
-        <p>Version Alpha 0.0.1</p>
       </Router>
     </>
   );
