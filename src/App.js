@@ -15,8 +15,6 @@ const Nav = styled.ul`
   padding: 1rem 0;
 `;
 
-const title = 'Dominique';
-
 function App() {
   return (
     <>
@@ -32,10 +30,10 @@ function App() {
             <Add />
           </Route>
           <Route path="/:title">
-            <WishList title={title} />
+            <WishList />
           </Route>
           <Route path="/">
-            <Home title={title} />
+            <Home />
           </Route>
         </Switch>
       </Router>

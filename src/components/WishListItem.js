@@ -9,7 +9,7 @@ const Container = styled.div`
   color: orange;
 `;
 
-export default function WishListSelector({ title }) {
+export default function WishListItem({ title }) {
   return (
     <>
       <Container>{title}</Container>
@@ -17,6 +17,6 @@ export default function WishListSelector({ title }) {
   );
 }
 
-WishListSelector.propTypes = {
+WishListItem.propTypes = {
   title: PropTypes.string.isRequired,
 };

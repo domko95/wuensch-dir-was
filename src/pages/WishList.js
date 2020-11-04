@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import WishListItem from '../components/WishListItem';
 
 const H2 = styled.h2`
@@ -7,17 +7,14 @@ const H2 = styled.h2`
   color: orange;
 `;
 
-export default function WishList({ title }) {
+export default function WishList() {
+  const { title } = useParams();
   return (
     <>
-      <H2>{title}</H2>
+      <H2>{title}&apos;s Wishlist</H2>
       <WishListItem title="hässliche Socken" />
       <WishListItem title="grauenvoller Pullover" />
       <WishListItem title="ekelhafte Süßigkeiten" />
     </>
   );
 }
-
-WishList.propTypes = {
-  title: PropTypes.string.isRequired,
-};
