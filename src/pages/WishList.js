@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import { getListById } from '../api/lists';
+import { useHistory, useParams } from 'react-router-dom';
+import {
+  deleteListById,
+  getListById,
+  patchListItemIntoListId,
+} from '../api/lists';
 import WishListItem from '../components/WishListItem';
 
 const H2 = styled.h2`
@@ -9,16 +13,36 @@ const H2 = styled.h2`
   color: orange;
 `;
 
+const CenteredDiv = styled.div`
+  display: grid;
+  place-items: center;
+`;
+
 export default function WishList() {
   const { listId } = useParams();
-  const [list, setList] = useState([]);
+  const history = useHistory();
+  const [list, setList] = useState(null);
   useEffect(async () => {
     const newList = await getListById(listId);
     setList(newList);
   }, []);
 
+  const handleDelete = () => {
+    deleteListById(listId);
+    history.push('/');
+  };
+
+  const [addWish, setAddWish] = useState('');
+  const handleChange = (e) => {
+    setAddWish([...list.wishes, e.target.value]);
+  };
+
+  const handleSubmit = () => {
+    patchListItemIntoListId(listId, addWish);
+  };
+
   if (!list) {
-    return <div>Loading . . . </div>;
+    return <CenteredDiv>Loading . . . </CenteredDiv>;
   }
 
   return (
@@ -27,6 +51,17 @@ export default function WishList() {
       {list.wishes?.map((wish) => (
         <WishListItem key={wish} title={wish} />
       ))}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Add a new Wish"
+          onChange={handleChange}
+        />
+        <button type="submit">Add</button>
+      </form>
+      <button type="button" onClick={handleDelete}>
+        Delete
+      </button>
     </>
   );
 }

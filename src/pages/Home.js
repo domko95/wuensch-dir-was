@@ -10,12 +10,22 @@ const H2 = styled.h2`
   color: orange;
 `;
 
+const CenteredDiv = styled.div`
+  display: grid;
+  place-items: center;
+`;
+
 export default function Home() {
-  const [lists, setLists] = useState([]);
+  const [lists, setLists] = useState(null);
   useEffect(async () => {
     const newLists = await getLists();
     setLists(newLists);
   }, []);
+
+  if (!lists) {
+    return <CenteredDiv>loading . . . </CenteredDiv>;
+  }
+
   return (
     <>
       <H2>Welcome to Wishlist</H2>
