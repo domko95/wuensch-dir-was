@@ -22,6 +22,8 @@ export default function WishList() {
   const { listId } = useParams();
   const history = useHistory();
   const [list, setList] = useState(null);
+  const [wishToAdd, setWishToAdd] = useState('');
+
   useEffect(async () => {
     const newList = await getListById(listId);
     setList(newList);
@@ -32,13 +34,12 @@ export default function WishList() {
     history.push('/');
   };
 
-  const [addWish, setAddWish] = useState('');
   const handleChange = (e) => {
-    setAddWish([...list.wishes, e.target.value]);
+    setWishToAdd([...list.wishes, e.target.value]);
   };
 
   const handleSubmit = () => {
-    patchListItemIntoListId(listId, addWish);
+    patchListItemIntoListId(listId, wishToAdd);
   };
 
   if (!list) {
